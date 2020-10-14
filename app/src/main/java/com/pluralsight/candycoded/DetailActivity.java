@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -71,4 +72,25 @@ public class DetailActivity extends AppCompatActivity {
     // ***
     // TODO - Task 4 - Share the Current Candy with an Intent
     // ***
+    //Override onOptionsItemSelected(MenuItem item)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //Make createShareIntent()
+        createShareIntent();
+        return super.onOptionsItemSelected(item);
+    }
+
+    //Make createShareIntent()
+    //Since there is a big chunk of code to create the Intent let's do it in a separate method. Create a method called private void createShareIntent().
+    private void createShareIntent() {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        //Set the Type for the Intent
+        shareIntent.setType("text/plain");
+        //Use putExtra() to Pass Data with the Intent
+        //Use the Intent's putExtra() method to add the text we want to share. The first parameter is the type of content Intent.EXTRA_TEXT, and the second is a concatenated String. To create the String that we want to share, we can use the String variables created at the top of this file - SHARE_DESCRIPTION, mCandyImageUrl, and HASHTAG_CANDYCODED. We can concatenate them into one String like so: SHARE_DESCRIPTION + mCandyImageUrl + HASHTAG_CANDYCODED.
+        String shareString = SHARE_DESCRIPTION + mCandyImageUrl + HASHTAG_CANDYCODED;
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareString);
+        //Start the Activity
+        startActivity(shareIntent);
+    }
 }

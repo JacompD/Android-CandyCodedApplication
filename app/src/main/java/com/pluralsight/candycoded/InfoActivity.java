@@ -41,11 +41,12 @@ public class InfoActivity extends AppCompatActivity {
             startActivity(mapIntent);
         }
     }
+
     // ***
     // TODO - Task 3 - Launch the Phone Activity
     // ***
     //create a method called public void createPhoneIntent(View view). This is the method we'll attach to the Click Listener on the TextView.
-    public void createPhoneIntent(View view){
+    public void createPhoneIntent(View view) {
         //Create an Intent with action Intent.ACTION_DIAL.
         Intent actionPhoneIntent = new Intent(Intent.ACTION_DIAL);
         //Use the Intent setData() method and pass in a URI of the telephone number "tel:0123456789". You can create a URI with the Uri.parse() method.
