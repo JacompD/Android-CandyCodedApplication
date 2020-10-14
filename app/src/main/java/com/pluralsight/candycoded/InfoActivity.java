@@ -28,7 +28,7 @@ public class InfoActivity extends AppCompatActivity {
     // ***
     // TODO - Task 2 - Launch the Google Maps Activity
     // ***
-    //create a method called public void createMapIntent(View view). This is the method we'll attach to the Click Listener on the TextView later.
+    //create a method called public void createMapIntent(View view). This is the method we'll attach to the Click Listener on the TextView.
     public void createMapIntent(View view) {
         //Create a Uri for the Address from an Intent String. Use the result to create an Intent.
         Uri uriAddress = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
