@@ -17,7 +17,7 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
 
         Uri uri = Uri.parse("android.resource://com.codeschool.candycoded/" + R.drawable.store_front);
-        ImageView candyStoreImageView = (ImageView)findViewById(R.id.image_view_candy_store);
+        ImageView candyStoreImageView = (ImageView) findViewById(R.id.image_view_candy_store);
         Picasso.with(this).
                 load(uri).
                 into(candyStoreImageView);
@@ -29,7 +29,7 @@ public class InfoActivity extends AppCompatActivity {
     // TODO - Task 2 - Launch the Google Maps Activity
     // ***
     //create a method called public void createMapIntent(View view). This is the method we'll attach to the Click Listener on the TextView later.
-public void createMapIntent(View view){
+    public void createMapIntent(View view) {
         //Create a Uri for the Address from an Intent String. Use the result to create an Intent.
         Uri uriAddress = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
         //Create an Intent from uriAddress. Set the action to ACTION_VIEW Intent
@@ -37,10 +37,10 @@ public void createMapIntent(View view){
         //Set the Intent package. Make the Intent explicit by setting the Google Maps package
         mapIntent.setPackage("com.google.android.apps.maps");
         //Attempt to start an Activity that can handle the Intent
-    if (mapIntent.resolveActivity(getPackageManager()) != null) {
-        startActivity(mapIntent);
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
     }
-}
     // ***
     // TODO - Task 3 - Launch the Phone Activity
     // ***
